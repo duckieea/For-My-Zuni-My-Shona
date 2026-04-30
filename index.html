@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You ❤️</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+      padding: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: pink;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HAIYYAAA MI SENORITA ❤️</h1>
+  <p>See what your autistic duck made.</p>
+
+  <button onclick="showMessage()">Bonk me gently </button>
+
+  <p id="message"></p>
+
+  <script>
+    const messages = [
+      "I Love YOuUUUu My SHona and Im missing you like ITNAAAA SARRAAAAA",
+      "you make my day better just by your voice ✨",
+      "I can't wait to hear your voice again *mwah* 💓",
+      "You're my favorite person, always."
+    ];
+
+    function showMessage() {
+      const random = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById("message").innerText = random;
+    }
+  </script>
+
+</body>
+</html>
