@@ -1,45 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>For You ❤️</title>
+  <title>For Mi Zuni Baby ✨</title>
+
+  <!-- Mobile scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
+      margin: 0;
+      padding: 0;
       background-color: #0f0f0f;
       color: white;
+      font-family: Arial, sans-serif;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       text-align: center;
-      font-family: Arial;
+    }
+
+    .container {
+      max-width: 400px;
+      width: 100%;
       padding: 20px;
     }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
     button {
-      padding: 40px 160px;
-      font-size: 30px;
+      padding: 12px 20px;
+      font-size: 16px;
       background: pink;
       border: none;
-      border-radius: 40px;
+      border-radius: 10px;
       cursor: pointer;
+      margin-top: 20px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 15px;
+      margin-top: 20px;
+      display: none;
     }
   </style>
 </head>
+
 <body>
 
-  <h1>HAIYYAAA MI SENORITA ❤️</h1>
-  <p>See what your autistic duck made.</p>
+  <div class="container">
+    <h1>HIYAAA MY SENORITA </h1>
+    <p>your autistic duck made this for you</p>
 
-  <button onclick="showMessage()">Bonk me gently </button>
+    <button onclick="showMessage()">Tap here hehe</button>
 
-  <p id="message"></p>
+    <p id="message"></p>
+
+    <!-- Image (hidden by default) -->
+    <img id="loveImage" src="your-photo.jpg">
+  </div>
 
   <script>
     const messages = [
-      "I Love YOuUUUu My SHona and Im missing you like ITNAAAA SARRAAAAA",
-      "you make my day better just by your voice ✨",
-      "I can't wait to hear your voice again *mwah* 💓",
-      "You're my favorite person, always."
+      { text: "I missed you all day today 🥹", showImage: false },
+      { text: "I just cant wait to hear your voice again ✨", showImage: false },
+      { text: "mwah we have a lot of movies to finish", showImage: false },
+      { text: "btw I love you like a lot okay?.", showImage: false },
+      { text: "like ITNAaAAAA SARRRAAAaaaaa ✨", showImage: true }
     ];
 
     function showMessage() {
       const random = messages[Math.floor(Math.random() * messages.length)];
-      document.getElementById("message").innerText = random;
+
+      document.getElementById("message").innerText = random.text;
+
+      const img = document.getElementById("loveImage");
+
+      if (random.showImage) {
+        img.style.display = "block";
+      } else {
+        img.style.display = "none";
+      }
     }
   </script>
 
