@@ -72,25 +72,26 @@
 
   <script>
     const messages = [
-      "I missed you all day today 🥹"
-       "I just cant wait to hear your voice again ✨"
-       "mwah we have a lot of movies to finish"
-       "btw I love you like a lot okay?."
-      "like ITNAaAAAA SARRRAAAaaaaa ✨"
+      { text: "I missed you all day today 🥹", showImage: false },
+      { text: "I just cant wait to hear your voice again ✨", showImage: false },
+      { text: "mwah we have a lot of movies to finish", showImage: false },
+      { text: "btw I love you like a lot okay?.", showImage: false },
+      { text: "like ITNAaAAAA SARRRAAAaaaaa ✨", showImage: true }
     ];
 
-     let index = 0;
+    function showMessage() {
+      const random = messages[Math.floor(Math.random() * messages.length)];
 
-  function showMessage() {
-    document.getElementById("message").innerText = messages[index];
+      document.getElementById("message").innerText = random.text;
 
-    index++;
+      const img = document.getElementById("loveImage");
 
-    // stop at last message (no looping)
-    if (index >= messages.length) {
-      index = messages.length - 1;
+      if (random.showImage) {
+        img.style.display = "block";
+      } else {
+        img.style.display = "none";
+      }
     }
-  }
   </script>
 
 </body>
