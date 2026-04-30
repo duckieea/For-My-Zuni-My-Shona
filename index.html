@@ -79,19 +79,18 @@
       { text: "like ITNAaAAAA SARRRAAAaaaaa ✨", showImage: true }
     ];
 
-    function showMessage() {
-      const random = messages[Math.floor(Math.random() * messages.length)];
+     let index = 0;
 
-      document.getElementById("message").innerText = random.text;
+  function showMessage() {
+    document.getElementById("message").innerText = messages[index];
 
-      const img = document.getElementById("loveImage");
+    index++;
 
-      if (random.showImage) {
-        img.style.display = "block";
-      } else {
-        img.style.display = "none";
-      }
+    // stop at last message (no looping)
+    if (index >= messages.length) {
+      index = messages.length - 1;
     }
+  }
   </script>
 
 </body>
